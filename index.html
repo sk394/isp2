@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy: frame-ancestors 'self' https://gptchatly.com/ChatGPT4-no-login.html
+    X-Frame-Options: SAMEORIGIN" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>ISP-2</title>
+    <script src="JS/script.js" defer></script>
+</head>
+
+<body>
+    <!-- webpage generator -->
+    <div class="section color-black">
+        <h1>Dynamic Blog Page Generator</h1>
+        <div class="wrapper">
+            <form onsubmit="updateContent(event); return false;">
+                <div class="form-section">
+                    <label for="headerText">Header</label>
+                    <input type="text" id="headerText" value="Why ISP?" /></br />
+
+                    <label for="quoteText">Header Quote</label>
+                    <input type="text" id="quoteText" value="An array of Web Devps" /></br />
+
+                    <label for="imageInput">Upload Image</label>
+                    <input type="file" id="imageInput" accept="image/*" /><br />
+
+                    <label for="paragraph1Text">First paragraph</label>
+                    <textarea id="paragraph1Text" rows="8" cols="50">This generates 1st paragraph</textarea><br />
+
+                    <label for="paragraph2Text">2nd paragraph</label>
+                    <textarea id="paragraph2Text" rows="8" cols="50">This generates 2nd paragraph</textarea><br />
+
+                    <label for="linkUrl">Any Link</label>
+                    <input type="text" id="linkUrl" placeholder="Enter link URL"><br>
+
+                    <label for="youtubeUrl">Attach Video</label>
+                    <input type="text" id="youtubeUrl" placeholder="Paste youtube video URL"><br>
+
+                    <label for="musicUrl">Attach Music</label>
+                    <input type="text" id="musicUrl" placeholder=".audio formats uRL"
+                        value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"><br>
+
+                </div>
+                <div class="form-section">
+                    <label for="authorText">Blog Author</label>
+                    <input type="text" id="authorText" value="Suman Khadka" /></br />
+
+                    <label for="buttonText">Generate Button</label>
+                    <input type="text" id="buttonText" value="Drag Me" /></br />
+
+                    <label for="backgroundColor">Background </label>
+                    <input type="color" id="backgroundColor" value="#00ff00" /><br />
+
+                    <label for="fontSize">Font size</label>
+                    <input type="text" id="fontSize" value="16px" /><br />
+
+                    <label for="fontColor">Font color</label>
+                    <input type="color" id="fontColor" value="#fffffff" /><br />
+
+                    <label for="marginsize">Set Margin</label>
+                    <input type="text" id="marginsize" value="10px" /><br />
+
+                    <label for="includeTable">Table Include </label>
+                    <input type="checkbox" id="includeTable" onclick="toggleTableInputs()"><br>
+
+                    <label for="tableRows">Table rows</label>
+                    <input type="text" id="tableRows" value="3" min="1" disabled /><br />
+
+                    <label for="tableColumns">Table Cols</label>
+                    <input type="text" id="tableColumns" value="3" min="1" disabled /><br />
+
+                    <label for="includeList">List Include </label>
+                    <input type="checkbox" id="includeList" onclick="toggleList()"><br>
+
+
+                    <label for="includeGPT">GPT Include </label>
+                    <input type="checkbox" id="includeGPT" onclick="toggleGPT()"><br>
+                </div>
+                <button class="generate" type="submit">Update this</button>
+            </form>
+            <div class="generate">
+                <button onclick="openWindow()">Generate Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="section color-grey">
+        <h1>Code to Generate</h1>
+        <iframe id="code" srcdoc="Preview Here"></iframe>
+        <div id="codeContent">
+            <section id="html">
+                <textarea class="codepen html-code" placeholder="HTML code" rows="15" cols="50"></textarea>
+            </section>
+            <section id="css">
+                <textarea class="codepen css-code" placeholder="CSS code" rows="15" cols="50"></textarea>
+            </section>
+            <section id="js">
+                <textarea class="codepen js-code" placeholder="JS code" rows="15" cols="50"></textarea>
+            </section>
+        </div>
+    </div>
+    <div class="section color-black">
+        <h1>GPT-Chat Integration</h1>
+        <div id="chat">
+            <iframe src="https://gptchatly.com/ChatGPT4-no-login.html" width="100" height="500" scrolling="No"></iframe>
+        </div>
+    </div>
+    <div class="section color-#957757">
+        <h1>Assignment/Project Tracker</h1>
+        <div class="board">
+            <div class="column" id="todo">
+                <h2>To Do</h2>
+                <div class="todoCard todocard-blue" draggable="true" contenteditable="true">ISP-Project2</div>
+                <div class="todoCard todocard-blue" draggable="true" contenteditable="true">SE Assignment</div>
+                <div class="todoCard todocard-blue" draggable="true" contenteditable="true">To do</div>
+                <div class="todoCard todocard-blue" draggable="true" contenteditable="true">Click to write</div>
+            </div>
+            <div class="column" id="inProgress">
+                <h2>In Progress</h2>
+                <div class="todoCard todocard-green" draggable="true" contenteditable="true">Task 3</div>
+                <div class="todoCard todocard-green" draggable="true" contenteditable="true">Task 4</div>
+                <div class="todoCard todocard-green" draggable="true" contenteditable="true">Drag Me</div>
+            </div>
+            <div class="column" id="done">
+                <h2>Completed</h2>
+                <div class="todoCard todocard-red" draggable="true" contenteditable="true">Task 5</div>
+                <div class="todoCard todocard-red" draggable="true" contenteditable="true">Task 6</div>
+            </div>
+        </div>
+        <div class="finalSection">
+            <h1>Features</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>HTML</td>
+                        <td>CSS</td>
+                        <td>JavaScript</td>
+                        <td>XML</td>
+                        <td>Others</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Button/List/Form/Iframe</td>
+                        <td>Bg color change on scroll</td>
+                        <td>OnScroll Js</td>
+                        <td>None</td>
+                        <td>Music Player Added in Blog Page</td>
+                    </tr>
+                    <tr>
+                        <td>Input/Img/Color Picker</td>
+                        <td>media screen use for responsive design</td>
+                        <td>Implementation of OpenAI API</td>
+                        <td>None</td>
+                        <td>2 GPT/ 1 custom API used in blog page/ other with iframe</td>
+                    </tr>
+                    <tr>
+                        <td>Table/TextArea</td>
+                        <td>Drag JS</td>
+                        <td>abc</td>
+                        <td>None</td>
+                        <td>Mini Code Editor Live Server, like Vscode</td>
+                    </tr>
+                    <tr>
+                        <td>Layout Design</td>
+                        <td>Styles for every tags</td>
+                        <td>Custom drag & drop JS for tracker</td>
+                        <td>None</td>
+                        <td>Assignment Tracker using Drag and Drop JS</td>
+                    </tr>
+                    <tr>
+                        <td>div elements</td>
+                        <td>Custom Font style</td>
+                        <td>Live Server JS for code implementation</td>
+                        <td>None</td>
+                        <td>Is responsive for every devices</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+            <p>&copy;Created by: <a href="https://github.com/sk394">Suman Khadka </a></p>
+        </footer>
+    </div>
+
+
+</body>
+<!-- include table or no -->
+<script>
+    function toggleTableInputs() {
+        var includeCheckbox = document.getElementById("includeTable");
+        var rows = document.getElementById("tableRows");
+        var cols = document.getElementById("tableColumns");
+        rows.disabled = !includeCheckbox.checked;
+        cols.disabled = !includeCheckbox.checked;
+    }
+    var includeGPT = false;
+    function toggleGPT() {
+        includeGPT = !includeGPT;
+    }
+    var includeList = false;
+    function toggleList() {
+        includeList = !includeList;
+    }
+</script>
+
+</html>

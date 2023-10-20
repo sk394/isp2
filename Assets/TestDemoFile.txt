@@ -1,0 +1,17 @@
+Title: Is AI replacing me as a developer?
+
+Quote: Haha, Just like calculators did replace mathematicians, huh?
+
+In today's rapidly evolving technological landscape, the role of artificial intelligence has become a topic of significant debate among developers and tech enthusiasts. The question that often lingers in the minds of many is, "Is AI replacing me as a developer?" While it's undeniable that AI and automation are reshaping the software development field, it's crucial to remember that AI is not here to supplant human developers but to empower and augment their capabilities.
+
+As developers, we should view AI as a valuable tool in our toolkit, one that can help us streamline repetitive tasks, identify patterns, and accelerate the development process. By leveraging AI, we can focus more on creative problem-solving, innovation, and designing robust solutions, while leaving routine coding and debugging tasks to machines. The synergy between human creativity and AI's computational power holds the potential to unlock new possibilities and drive progress in the field of software development. So, instead of fearing AI as a replacement, let's embrace it as a companion on our journey to create, invent, and shape the future of technology.
+
+
+Link: https://www.bbc.com/news/technology-65102150
+
+Html: <h1 onmouseover ="fun(this)" onmouseout="normal(this)">Hy There</h1>
+
+Js: fun = (x)=>{
+x.textContent = "change";}
+normal=(x)=>{
+x.textContent = "Hy There";}
