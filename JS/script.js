@@ -133,7 +133,7 @@ function openWindow(){
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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',
+                'Authorization': 'Bearer sk-##################',
             },
             body: data,
         })
